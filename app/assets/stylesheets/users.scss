@@ -16,8 +16,6 @@ input {
   margin: 2px auto;
 }
 
-
-
 label {
   display: flex;
   width: 50%;
@@ -25,4 +23,13 @@ label {
   margin: 0 auto;
   text-align: middle;
   color: rgba(31, 31, 31, 0.582)
+}
+
+a {
+  display: flex;
+  width: 30%;
+  margin: 0 auto;
+  text-decoration: none;
+  color: rgba(31, 31, 31, 0.582);
+  font-size: 13px;
 }
