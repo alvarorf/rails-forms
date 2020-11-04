@@ -1,0 +1,14 @@
+<%= form_for :user, url: '/users', method: :post do |form| %>
+  <ul>
+    <%= form.text_field :username, placeholder: "Your name here"%>
+  </ul>
+  <ul>
+    <%= form.email_field :email, placeholder: "Your email here" %>
+  </ul>
+  <ul>
+    <%= form.password_field :password, placeholder: "Enter a secure password (of at least 8 characters)" %>
+  </ul>
+  <ul>
+    <%= form.submit "Edit" %>
+  </ul>
+<% end %>
