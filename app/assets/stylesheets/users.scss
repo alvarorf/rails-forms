@@ -13,5 +13,16 @@ input {
   border: 1px solid rgba(146, 146, 146, 0.705);
   width: 50%;
   min-width: 150px;
+  margin: 2px auto;
+}
+
+
+
+label {
+  display: flex;
+  width: 50%;
+  background-color: rgba(240, 240, 240, 0.918);
   margin: 0 auto;
+  text-align: middle;
+  color: rgba(31, 31, 31, 0.582)
 }

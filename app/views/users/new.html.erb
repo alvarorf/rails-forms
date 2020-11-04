@@ -1,17 +1,24 @@
 <% if false %>
 <form action="/users" method="post" accept-charset="UTF-8">
-    <input type="text" name="user[username]">
-    <input type="email" name="user[email]">
-    <input type="password" name="user[password]">
-
+    <input type="text" name="user[username]" placeholder='Your username (of at least 4 characters) here.'>
+    <input type="email" name="user[email]" placeholder='Your email here. It must be a valid email and of at least 10 characters.'>
+    <input type="password" name="user[password]" placeholder='Your password here (at least 8 characters).'>
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-    <!-- other inputs here -->
-    <input type="submit" value="Submit This Form">
+    <input type="submit" value="Create a new user">
 </form>
+
+<%= form_tag(users_path, :method => "post") do %>
+  <%= label_tag 'username' %>
+  <%= text_field_tag(:username) %><br/>
+  <%= label_tag 'email' %>
+  <%= text_field_tag(:email) %><br/>
+  <%= label_tag 'password' %>
+  <%= password_field_tag 'password' %><br/>
+  <%= submit_tag 'Create a new user'%>
+<% end %>
 <% end %>
 
-<%= form_for :user, url: '/users', method: :post do |form| %>
+<%= form_for :user, :url => users_path, method: :post do |form| %>
     <ul>
     <%= form.text_field :username, placeholder: "Your name here"%>
   </ul>
@@ -24,6 +31,5 @@
   <ul>
     <%= form.submit "Create new user" %>
   </ul>
+
 <% end %>
-
-
