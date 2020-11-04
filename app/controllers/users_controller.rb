@@ -16,7 +16,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    if @user.update(user_params)
+      flash[:notice] = "User '#{@user.username}' has been updated!"
+      sleep(2.5)
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
   def new; end
+  def edit; end
 
   def user_params
     params.require(:user).permit(:username, :email, :password)
