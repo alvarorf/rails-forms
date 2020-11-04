@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.save
       sleep(2.5)
-      redirect_to edit_users_path, notice: "User '#{@user.username}' has been updated!"
+      redirect_to new_users_path, notice: "User '#{@user.username}' has been updated!"
     else
       @user.errors.full_messages
       render :edit
