@@ -19,6 +19,12 @@
 <% end %>
 
 <%= form_for :user, url: users_path, method: :post do |form| %>
+    <% flash.each do |type, msg| %>
+      <div class="flash-message">
+        <%= msg %>
+      </div>
+    <% end %>
+
   <ul>
     <%= form.text_field :username, placeholder: "Your name here"%>
   </ul>
