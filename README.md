@@ -20,7 +20,7 @@ Assuming that `Bundler` is installed, you can continue with the following steps:
 - Step 2: Open the project folder where the repository was downloaded. Once you are in that folder, open a terminal and make sure that it will be opened in that specific folder.
 - Step 3: Once you are in the terminal, just type in: `bundle install`. This will install the required dependencies for this project.
 - Step 4: Now, you need to run the migrations. To do this, while in the project root folder type in: `rails db:migrate`.
-- Step 5: Now, to try the project type in: `rails server` and then go to `localhost:3000/users/new`. There, you will be able to add users (make sure that you type in a valid email address, a user longer than 3 characters and a password of at least 8 characters). If you want to edit a user, you can do so by going to `localhost:3000/users/new`. If you are unsure if this worked, you can check the users created by typing in in your terminal `rails console` and then listing the users with `User.all`.
+- Step 5: Now, to try the project type in: `rails server` and then go to `localhost:3000/users/new`. There, you will be able to add users (make sure that you type in a valid email address, a user longer than 3 characters and a password of at least 8 characters). If you want to edit a user, you can do so by going to `localhost:3000/users/edit?id=theuserid`, for instance: `localhost:3000/users/edit?id=1`. If you are unsure if this worked, you can check the users created by typing in in your terminal `rails console` and then listing the users with `User.all`.
 
 ### Authors
 
