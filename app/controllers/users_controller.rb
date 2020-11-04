@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sleep(2.5)
-      redirect_to new_users_path, notice: "User '#{@user.username}' has been created!"
+      redirect_to edit_users_path(@user.id), notice: "User '#{@user.username}' has been created!"
     else
       render :new
     end
@@ -17,9 +17,9 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
+    if @user.save
       sleep(2.5)
-      redirect_to edit_user_path, notice: "User '#{@user.username}' has been updated!"
+      redirect_to edit_users_path, notice: "User '#{@user.username}' has been updated!"
     else
       @user.errors.full_messages
       render :edit
