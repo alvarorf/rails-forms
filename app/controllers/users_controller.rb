@@ -16,11 +16,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    #@user = User.find(params[:id])
+    @user = User.find(params[:id])
     if @user.update(user_params)
       sleep(2.5)
       redirect_to edit_user_path, notice: "User '#{@user.username}' has been updated!"
     else
+      @user.errors.full_messages
       render :edit
     end
   end
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    #@user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def user_params

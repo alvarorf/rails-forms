@@ -17,7 +17,9 @@
 <%# <% end %>
 <%# <% end %>
 
-<%= form_for :user, url: users_path, method: :post do |form| %>
+<%= 
+
+<%= form_for :user, :url => { :action => :update, :id => @user.id } do |form| %>
     <% flash.each do |type, msg| %>
       <div class="flash-message">
         <%= msg %>
