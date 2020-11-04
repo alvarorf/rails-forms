@@ -17,7 +17,8 @@
 <%# <% end %>
 <%# <% end %>
 
-<%= form_for(@user) do |f| %>
+<%= form_for :user, :url => { :action => :update, :id => @user.id },
+:method => :put do |f| %>
     <% flash.each do |type, msg| %>
       <div class="flash-message">
         <%= msg %>
@@ -33,7 +34,7 @@
     <%= f.password_field :password, placeholder: "Enter a secure password (of at least 8 characters)" %>
   </ul>
   <ul>
-    <%= f.submit "Edit this user" %>
+    <%= f.submit %>
   </ul>
   <br>
 <% end %>
